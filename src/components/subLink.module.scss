@@ -1,0 +1,81 @@
+@import "../App.scss";
+
+$label-color: #ccc;
+$toggle-color: #f90;
+$white: #fff;
+
+.sublink {
+  margin-left: 100px;
+
+  & div.overall {
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+    margin: 0 auto;
+    width: 85%;
+    // padding-bottom: 12px;
+    border-bottom: 1px solid #a5a4a413;
+    // opacity: 0.2;
+  }
+
+  & ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+
+    li {
+      list-style-type: none;
+      &:not(:last-child) {
+        margin-right: 43px;
+      }
+
+      a {
+        text-decoration: none;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 19px;
+        display: flex;
+        align-items: center;
+        text-transform: capitalize;
+        color: $color-pallete-9;
+        opacity: 0.5;
+        padding-bottom: 11px;
+
+        &:hover {
+          color: $color-pallete-5;
+          opacity: 1;
+          border-bottom: 1px solid $color-pallete-5;
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  & .toggle_switch {
+    margin-left: 7px;
+    margin-bottom: 7px;
+  }
+
+  .custom_control_label::before {
+
+    background-color: $color-pallete-2;
+    border: color-pallete-2 solid 1px !important;
+}
+
+.custom_switch .custom_control_label::after {
+  background-color: white;
+}
+
+  .custom_control_input:checked ~ .custom_control_label::before {
+    color: #fff;
+    border-color: $color-pallete-5;
+    background-color: $color-pallete-5;
+  }
+
+  .custom_control_input:checked ~ .custom_control_label::after {
+    color: #fff;
+    border-color: #007bff;
+    // background-color: #007bff;
+  }
+}

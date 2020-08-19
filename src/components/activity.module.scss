@@ -1,0 +1,91 @@
+@import "../App.scss";
+
+.activity {
+  margin-left: 100px;
+  margin-top: 40px;
+
+  & .main {
+    width: 85%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 24px;
+
+    > div > div {
+      margin-bottom: 17px;
+    }
+
+    & h4 {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 19px;
+      text-transform: capitalize;
+      color: $color-pallete-9;
+    }
+  }
+
+  & .addnew_card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    color: $color-pallete-2;
+    border: none;
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-bottom: 11px;
+  }
+
+  & .task_card {
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 8px 12px;
+    margin-bottom: 8px !important;
+    color: $color-pallete-9;
+
+    & p {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 10px;
+      line-height: 145.1%;
+      margin-bottom: 12px;
+    }
+
+    & .icon {
+      opacity: 0.5;
+    }
+
+    & span.due_date {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 14px;
+      text-transform: capitalize;
+      opacity: 0.5;
+      margin-left: 5px;
+    }
+
+    & span.more_users {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 5px;
+      line-height: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #a5a4a4;
+      background: #e8e7ea;
+    }
+  }
+
+  & .empty_task {
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+    height: 65vh;
+  } 
+}
