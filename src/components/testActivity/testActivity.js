@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { Task, ActivityTitle } from "../activity/activity";
 import styles from "./testActivity.module.scss";
