@@ -5,7 +5,8 @@ import styles from "./testActivity.module.scss";
 import dropdown_icon from "../../icons/dropdown-white.svg";
 import bag_icon from "../../icons/bag.svg";
 
-const TestCase = ({ test, show, showDropdown }) => {
+const TestCase = ({ test }) => {
+  const [show, setShow] = useState(false);
   return (
     <div
       className={
@@ -15,35 +16,47 @@ const TestCase = ({ test, show, showDropdown }) => {
       <span>{test}</span>
       <div style={{ position: "relative" }}>
         <button
-        // onClick={() => {
-        //   show(true);
-        // }}
+          onClick={() => {
+            setShow(!show);
+          }}
         >
           pass <img src={dropdown_icon} alt="dropdown icon" />
         </button>
-        <Dropdown display={showDropdown} />
+
+        <div className={`${styles.dropdown_content} ${show? "" : "d-none"}`}>
+          <form>
+            <input type="search" placeholder="Search name" />
+          </form>
+
+          <ul>
+            <li>Pass</li>
+            <li>Failed</li>
+            <li>Retest</li>
+            <li>Untest</li>
+          </ul>
+        </div>
       </div>
     </div>
   );
 };
 
-const Dropdown = ({ display }) => {
-  let showClass = display ? "show" : "";
-  return (
-    <div className={showClass + " " + styles.dropdown_content}>
-      <form>
-        <input type="search" placeholder="Search name" />
-      </form>
+// const Dropdown = ({ display }) => {
+//   let showClass = display ? "show" : "";
+//   return (
+//     <div className={showClass + " " + styles.dropdown_content}>
+//       <form>
+//         <input type="search" placeholder="Search name" />
+//       </form>
 
-      <ul>
-        <li>Pass</li>
-        <li>Failed</li>
-        <li>Retest</li>
-        <li>Untest</li>
-      </ul>
-    </div>
-  );
-};
+//       <ul>
+//         <li>Pass</li>
+//         <li>Failed</li>
+//         <li>Retest</li>
+//         <li>Untest</li>
+//       </ul>
+//     </div>
+//   );
+// };
 
 const SummaryCard = ({ name, total, bg }) => {
   return (
@@ -67,8 +80,6 @@ export default () => {
     "Make the background image blur",
     "Apply gredient colours on the navigation",
   ];
-
-  const [showDropdown, setShowDropdown] = useState(false);
 
   return (
     <div className={styles.test_activity}>
@@ -106,12 +117,7 @@ export default () => {
           <ActivityTitle title="Added Test case" displayMoreMenu={false} />
           <div className={styles.addTestCase}>
             {testCase.map((test, index) => (
-              <TestCase
-                test={test}
-                key={index}
-                show={setShowDropdown}
-                showDropdown={showDropdown}
-              />
+              <TestCase test={test} key={index} />
             ))}
 
             <div className={styles.action_btn}>
