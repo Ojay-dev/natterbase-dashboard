@@ -8,7 +8,11 @@ $color-pallete-7: #eb0e43;
 $color-pallete-8: #004f71;
 $color-pallete-9: #03293d;
 $color-pallete-10: #fbfbfb;
+$color-pallete-11: #f8426e;
+$color-pallete-12: #296799;
+$color-pallete-13: rgba(3, 41, 61, 0.8);
 
+$body-width: 85%;
 .bg__light_blue {
   background: $color-pallete-2 !important;
 }
@@ -20,16 +24,29 @@ $color-pallete-10: #fbfbfb;
 .bg__purple {
   background: $color-pallete-4 !important;
 }
+
 .bg__orange {
   background: $color-pallete-5 !important;
+}
+
+.bg__pink {
+  background: $color-pallete-11 !important;
 }
 
 .bg__dark_blue {
   background: $color-pallete-8 !important;
 }
 
+.bg__navy {
+  background: $color-pallete-12 !important;
+}
+
+.bg__dark {
+  background: $color-pallete-13 !important;
+}
+
 textarea:focus,
-input:focus{
+input:focus {
   outline: 0;
 }
 
@@ -37,3 +54,45 @@ button:focus {
   outline: 0;
 }
 
+.show {
+  display: block !important;
+}
+
+h4 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  text-transform: capitalize;
+  color: $color-pallete-9;
+}
+
+span.due-date {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  color: #03293d46;
+  margin-left: 5px;
+}
+
+.icon {
+  opacity: 0.5;
+}
+
+ span.more_users {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 5px;
+  line-height: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a5a4a4;
+  background: #e8e7ea;
+}

@@ -19,16 +19,16 @@ const AddNew = () => {
   );
 };
 
-const ActivityTitle = ({ title }) => {
+export const ActivityTitle = ({ title, displayMoreMenu }) => {
   return (
     <div className="d-flex justify-content-between">
       <h4>{title}</h4>
-      <img src={moreIcon} alt="" />
+      {displayMoreMenu ? <img src={moreIcon} alt="" /> : null}
     </div>
   );
 };
 
-const Task = ({ assignment, date }) => {
+export const Task = ({ assignment, date }) => {
   let relativeUserPosition = -4;
   let style = { position: "relative" };
   return (
@@ -39,9 +39,9 @@ const Task = ({ assignment, date }) => {
       </div>
 
       <div className="d-flex justify-content-between">
-        <div>
+        <div className="d-flex">
           <img src={clock} alt="clock icon" className={styles.icon} />
-          <span className={styles.due_date}>due {date}</span>
+          <span className={styles.due_date + " due-date"}>due {date}</span>
         </div>
 
         <div className="d-flex align-items-center">
@@ -65,7 +65,7 @@ const Task = ({ assignment, date }) => {
             alt="user"
             style={{ ...style, right: relativeUserPosition }}
           />
-          <span className={styles.more_users}>+4</span>
+          <span className={styles.more_users + " more_users"}>+4</span>
         </div>
       </div>
     </div>
@@ -77,14 +77,14 @@ export default () => {
     <div className={styles.activity}>
       <div className={styles.main}>
         <div>
-          <ActivityTitle title="Backlog" />
+          <ActivityTitle title="Backlog" displayMoreMenu={true} />
           <AddNew />
           <form
             onSubmit={(e) => {
               e.preventDefault();
             }}
           >
-            <textarea name="task" id="" ></textarea>
+            <textarea name="task" id=""></textarea>
           </form>
           <Task
             assignment="Apply gredient colours on the dashboard sidenav"
@@ -109,25 +109,25 @@ export default () => {
         </div>
 
         <div>
-          <ActivityTitle title="Todo" />
+          <ActivityTitle title="Todo" displayMoreMenu={true} />
           <AddNew />
           <div className={styles.empty_task}></div>
         </div>
 
         <div>
-          <ActivityTitle title="In Progress" />
+          <ActivityTitle title="In Progress" displayMoreMenu={true} />
           <AddNew />
           <div className={styles.empty_task}></div>
         </div>
 
         <div>
-          <ActivityTitle title="In Review" />
+          <ActivityTitle title="In Review" displayMoreMenu={true} />
           <AddNew />
           <div className={styles.empty_task}></div>
         </div>
 
         <div>
-          <ActivityTitle title="Done" />
+          <ActivityTitle title="Done" displayMoreMenu={true} />
           <AddNew />
           <div className={styles.empty_task}></div>
         </div>

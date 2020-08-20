@@ -1,0 +1,227 @@
+@import "../../App.scss";
+
+.test_activity {
+  margin-left: 100px;
+  margin-top: 38px;
+  margin-bottom: 133px;
+  & .main {
+    width: $body-width;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-column-gap: 28px;
+  }
+
+  & .action_btn {
+    display: flex;
+    justify-content: space-between;
+    padding: 47px 32px 41px 21px;
+
+    & button:first-child {
+      background: $color-pallete-2;
+      border: 2px solid rgba(26, 12, 47, 0.1);
+      box-sizing: border-box;
+      border-radius: 5px;
+      padding: 9px 22px;
+    }
+    
+    & button:last-child {
+      color: $color-pallete-9;
+      background: #FFFFFF;
+      border: 2px solid $color-pallete-9;
+      box-sizing: border-box;
+      border-radius: 5px;
+      padding: 9px 50px;
+    }
+  }
+
+  & .module {
+    & > div {
+      background: #ffffff;
+      border-radius: 5px;
+      padding: 8px 12px;
+      margin-bottom: 8px;
+    }
+
+    & p {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 10px;
+      line-height: 145.1%;
+      color: $color-pallete-9;
+    }
+  }
+
+  & .task_card {
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 8px 12px;
+    margin-bottom: 8px !important;
+    color: $color-pallete-9;
+
+    & p {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 10px;
+      line-height: 145.1%;
+      margin-bottom: 12px;
+    }
+
+    & .icon {
+      opacity: 0.5;
+    }
+
+    & span.due_date {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 14px;
+      text-transform: capitalize;
+      opacity: 0.5;
+      margin-left: 5px;
+    }
+
+    & span.more_users {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 5px;
+      line-height: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #a5a4a4;
+      background: #e8e7ea;
+    }
+  }
+
+  & .addTestCase {
+    padding: 30px 32px 41px 0;
+    background: #ffffff;
+
+    & .testCase:not(:last-child) {
+      margin-bottom: 23px;
+    }
+
+    span {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 19px;
+      padding-left: 21px;
+      color: $color-pallete-9;
+      width: 70%;
+
+      &:hover {
+        border-left: 2px solid $color-pallete-5;
+        padding-left: 19px;
+      }
+    }
+
+    button {
+      background: $color-pallete-3;
+      border: 2px solid rgba(26, 12, 47, 0.1);
+      box-sizing: border-box;
+      border-radius: 5px;
+      color: #ffffff;
+      padding: 3px 11px;
+
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  & .dropdown_content {
+    display: none;
+    position: absolute;
+    top: 1px;
+    right: -45px;
+    background: #ffffff;
+    width: 163px;
+    border: 0.5px solid #f2f2f2;
+    box-sizing: border-box;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
+    z-index: 1;
+    & input[type="search"] {
+      margin: 9px 14px;
+      background: #1a0c2f09;
+      font-style: normal;
+      color: $color-pallete-9;
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 14px;
+      border-radius: 5px;
+      border: none;
+      padding: 8px;
+
+      &::placeholder {
+        color: #03293d4d;
+      }
+    }
+
+    & ul {
+      padding: 0;
+
+      li {
+        padding: 9px 16px;
+        border-bottom: 1px solid #a9a5af1f;
+        list-style-type: none;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 16px;
+        color: $color-pallete-9;
+
+        &:hover {
+          background: #e8e7ea3d;
+        }
+      }
+    }
+  }
+
+  & .overview {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 21px;
+    background: #ffffff;
+    padding: 45px 39px 150px 30px;
+
+    & .summary_card {
+      box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.15);
+      border-radius: 5px;
+      padding: 12px 14px;
+      width: 100%;
+      color: #ffffff;
+
+      & > div {
+        margin-bottom: 27px;
+      }
+
+      & span {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 150%;
+      }
+
+      & img {
+        padding: 8px 10px;
+        background: #ffffff25;
+        // opacity: 0.1;
+        border-radius: 5px;
+      }
+
+      & h6 {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 19px;
+      }
+    }
+  }
+}
