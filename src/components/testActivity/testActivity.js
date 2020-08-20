@@ -7,6 +7,14 @@ import bag_icon from "../../icons/bag.svg";
 
 const TestCase = ({ test }) => {
   const [show, setShow] = useState(false);
+  const [testStatus, setTestStatus] = useState(0);
+
+  const handleTestStatus = (status) => {
+    console.log(status);
+    setTestStatus(status);
+    setShow(false)
+  };
+
   return (
     <div
       className={
@@ -19,19 +27,35 @@ const TestCase = ({ test }) => {
           onClick={() => {
             setShow(!show);
           }}
+          className={
+            testStatus === 1
+              ? "bg__green"
+              : testStatus === 2
+              ? "bg__pink2"
+              : testStatus === 3
+              ? "bg__orange"
+              : ""
+          }
         >
-          pass <img src={dropdown_icon} alt="dropdown icon" />
+          {testStatus === 1
+            ? "pass"
+            : testStatus === 2
+            ? "failed"
+            : testStatus === 3
+            ? "Retest"
+            : "pass"}{" "}
+          <img src={dropdown_icon} alt="dropdown icon" />
         </button>
 
-        <div className={`${styles.dropdown_content} ${show? "" : "d-none"}`}>
+        <div className={`${styles.dropdown_content} ${show ? "" : "d-none"}`}>
           <form>
             <input type="search" placeholder="Search name" />
           </form>
 
           <ul>
-            <li>Pass</li>
-            <li>Failed</li>
-            <li>Retest</li>
+            <li onClick={() => handleTestStatus(1)}>Pass</li>
+            <li onClick={() => handleTestStatus(2)}>Failed</li>
+            <li onClick={() => handleTestStatus(3)}>Retest</li>
             <li>Untest</li>
           </ul>
         </div>

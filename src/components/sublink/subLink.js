@@ -14,7 +14,6 @@ const NavLink = ({ name, active }) => {
 };
 
 export default ({ links, displaySwitcher, icon, duration }) => {
-  console.log(links);
   return (
     <div className={styles.sublink}>
       <div className={styles.overall}>
