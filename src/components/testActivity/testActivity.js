@@ -12,7 +12,7 @@ const TestCase = ({ test }) => {
   const handleTestStatus = (status) => {
     console.log(status);
     setTestStatus(status);
-    setShow(false)
+    setShow(false);
   };
 
   return (

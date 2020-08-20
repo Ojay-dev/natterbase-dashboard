@@ -105,7 +105,7 @@
       margin-bottom: 23px;
     }
 
-    span {
+  span {
       font-style: normal;
       font-weight: 600;
       font-size: 14px;
@@ -173,6 +173,8 @@
       padding: 0;
 
       li {
+        display: flex;
+        justify-content: space-between;
         padding: 9px 16px;
         border-bottom: 1px solid #a9a5af1f;
         list-style-type: none;
