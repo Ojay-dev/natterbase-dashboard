@@ -1,4 +1,4 @@
-@import "../App.scss";
+@import "../../App.scss";
 
 $label-color: #ccc;
 $toggle-color: #f90;
@@ -42,7 +42,7 @@ $white: #fff;
         opacity: 0.5;
         padding-bottom: 11px;
 
-        &:hover {
+        &:hover, &.active {
           color: $color-pallete-5;
           opacity: 1;
           border-bottom: 1px solid $color-pallete-5;
@@ -58,14 +58,13 @@ $white: #fff;
   }
 
   .custom_control_label::before {
-
     background-color: $color-pallete-2;
     border: color-pallete-2 solid 1px !important;
-}
+  }
 
-.custom_switch .custom_control_label::after {
-  background-color: white;
-}
+  .custom_switch .custom_control_label::after {
+    background-color: white;
+  }
 
   .custom_control_input:checked ~ .custom_control_label::before {
     color: #fff;

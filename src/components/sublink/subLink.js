@@ -3,31 +3,37 @@ import { Link } from "react-router-dom";
 
 import styles from "./subLink.module.scss";
 
+const NavLink = ({ name, active }) => {
+  return (
+    <li>
+      <Link to="#" className={active ? styles.active : ""}>
+        {name}
+      </Link>
+    </li>
+  );
+};
+
 export default () => {
   return (
     <div className={styles.sublink}>
       <div className={styles.overall}>
-        <div>
+        <nav>
           <ul>
-            <li>
-              <Link to="#">Overview</Link>
-            </li>
-            <li>
-              <Link to="#">Teams</Link>
-            </li>
-            <li>
-              <Link to="#">Modules</Link>
-            </li>
-            <li>
-              <Link to="#">Files</Link>
-            </li>
-            <li>
-              <Link to="#">Progress</Link>
-            </li>
+            <NavLink name="Overview" />
+            <NavLink name="Teams" />
+            <NavLink name="Modules" active={true} />
+            <NavLink name="Files" />
+            <NavLink name="Progress" />
           </ul>
-        </div>
+        </nav>
 
-        <div className={styles.toggle_switch + " custom-control custom-switch " + styles.custom_switch}>
+        <div
+          className={
+            styles.toggle_switch +
+            " custom-control custom-switch " +
+            styles.custom_switch
+          }
+        >
           <input
             type="checkbox"
             className={"custom-control-input " + styles.custom_control_input}

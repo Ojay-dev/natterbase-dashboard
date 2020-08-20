@@ -1,14 +1,15 @@
 import React from "react";
 import styles from "./header.module.scss";
 
-import menuIcon from "../icons/menu.svg";
-import moreIcon from "../icons/more-vertical.svg";
-import FCMB_logo from "../icons/FCMB_logo.svg";
-import notify_icon from "../icons/bell.svg";
-import shield from "../icons/shield.svg";
-import badge from "../icons/badge.svg";
-import dropdown from "../icons/dropdown.svg";
-import profile_image from "../images/profile-image.png";
+import menuIcon from "../../icons/menu.svg";
+import moreIcon from "../../icons/more-vertical.svg";
+import FCMB_logo from "../../icons/FCMB_logo.svg";
+import notify_icon from "../../icons/bell.svg";
+import shield from "../../icons/shield.svg";
+import badge from "../../icons/badge.svg";
+import dropdown from "../../icons/dropdown.svg";
+import search from "../../icons/search.svg";
+import profile_image from "../../images/profile-image.png";
 
 export default () => {
   return (
@@ -28,10 +29,12 @@ export default () => {
           <div className={styles.vr}></div>
 
           <form
+          className="d-flex align-items-center"
             onSubmit={(e) => {
               e.preventDefault();
             }}
           >
+            <img src={search} alt="search icon" className="mr-1"/>
             <input type="search" placeholder="Search" />
           </form>
         </div>

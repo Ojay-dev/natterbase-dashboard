@@ -1,4 +1,4 @@
-@import "../App.scss";
+@import "../../App.scss";
 
 .header {
   background: #fbfbfb;
@@ -8,10 +8,6 @@
 
   & > div {
     margin: 0 5% 0 32px;
-  }
-
-  & .more_icon {
-    background-image: url("../icons/more-vertical.svg");
   }
 
   & .vr {
