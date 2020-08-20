@@ -79,6 +79,13 @@ export default () => {
         <div>
           <ActivityTitle title="Backlog" />
           <AddNew />
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+            }}
+          >
+            <textarea name="task" id="" ></textarea>
+          </form>
           <Task
             assignment="Apply gredient colours on the dashboard sidenav"
             date="Aug 8"
@@ -126,7 +133,7 @@ export default () => {
         </div>
 
         <button className={styles.floatingActionButton}>
-          <img src={plus} alt="plus icon"/>
+          <img src={plus} alt="plus icon" />
         </button>
       </div>
     </div>
