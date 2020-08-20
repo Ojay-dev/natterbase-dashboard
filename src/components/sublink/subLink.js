@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import styles from "./subLink.module.scss";
+import clock from "../../icons/clock_green.svg";
 
 const NavLink = ({ name, active }) => {
   return (
@@ -28,21 +29,24 @@ export default () => {
         </nav>
 
         <div
-          className={
-            styles.toggle_switch +
-            " custom-control custom-switch " +
-            styles.custom_switch
-          }
+          className="d-flex justify-content-between align-items-center"
+          style={{ width: "40%" , paddingBottom: 11 }}
         >
-          <input
-            type="checkbox"
-            className={"custom-control-input " + styles.custom_control_input}
-            id="customSwitch1"
-          />
-          <label
-            className={"custom-control-label " + styles.custom_control_label}
-            htmlFor="customSwitch1"
-          ></label>
+          <div className={"d-flex align-items-center " + styles.toggle}>
+            <span className="mr-3">All Task</span>
+            <input type="checkbox" id="switch" />
+            <label for="switch">Toggle</label>
+            <span className="ml-3">All Modules</span>
+          </div>
+
+          <div
+            className={"d-flex align-items-center " + styles.project_duration}
+          >
+            <img src={clock} alt="clock icon" />
+            <div className="ml-2">
+              Project Deadline : <span>6 weeks</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
